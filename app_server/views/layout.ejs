@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EEM SmartLock</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/public/js/socket.io.js"></script>
+    <script src="/public/js/jquery-3.3.1.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+</head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+<link href="/public/css/Navigation-Clean.css" rel="stylesheet">
+<link href="/public/css/style.css" rel="stylesheet">
+<link href="/public/css/bootstrap.min.css" rel="stylesheet">
+
+<body>
+    <header>
+        <div>
+            <nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark navigation-clean">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="/" title="Main Page">
+                        <i class="fas fa-robot"></i> EEM SmartLock</a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav ml-auto">
+                            <%if(admin){%>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="/users" title="User List">
+                                        <i class="fas fa-user-ninja"></i> Users</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="/history" title="See the user log">
+                                        <i class="fas fa-history"></i> History</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="/signup" title="Register a new team member">
+                                        <i class="fas fa-user-plus"></i> Register</a>
+                                </li>
+                                <%}%>
+                                    <%if(userAuth){%>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" href="/logout" title="logout">
+                                                <i class="fas fa-sign-out-alt"></i> Logout</a>
+                                        </li>
+                                        <%}else{%>
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" href="/login" title="Login">
+                                                    <i class="fas fa-sign-in-alt"></i> Login</a>
+                                            </li>
+                                            <%}%>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+        <%- body%>
+    </main>
+
+    <footer class="footer sticky-bottom">
+        <div class="container-fluid footer-copyright text-center">© 2021 Muhammet Şükrü Demir ALL RIGHTS RESERVED
+            <a href="https://muhammetsukrudemir.com/" target="_blank"> muhammetsukrudemir.com</a>
+        </div>
+    </footer>
+</body>
+
+</html>

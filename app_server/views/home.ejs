@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="doorBtn">
+            <%if(doorStatus !==undefined){%>
+                <%if(doorStatus){%>
+                    <div class="alert alert-info" role="alert">
+                        <h4 class="alert-heading">Door is open!</h4>
+                    </div>
+                    <%}else{%>
+                        <div class="alert alert-info" role="alert">
+                            <h4 class="alert-heading">Door is close!</h4>
+                        </div>
+                        <%}%>
+                            <%}%>
+                                <a href="/home/openTheDoor/" class="btn btn-success btn-lg active" role="button"
+                                    aria-pressed="true">openTheDoor</a>
+                                <a href="/home/closeTheDoor/" class="btn btn-danger btn-lg active" role="button"
+                                    aria-pressed="true">closeTheDoor</a>
+        </div>
+    </div>
+</div>

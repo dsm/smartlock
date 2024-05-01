@@ -1,0 +1,62 @@
+<div class="container-fluid" style="margin-top: 100px">
+    <div class="row">
+        <div class="signupPanel">
+            <div class="card border-dark">
+                <div class="card-header">
+                    <h3 class="mb-0">User Registration</h3>
+                </div>
+                <div class="card-body text-dark">
+                    <form action="/signup" method="POST">
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-prepend">
+                                <i class="fas fa-user-ninja icon rounded-left"></i>
+                            </span>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Please enter your firstname!">
+
+                        </div>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-prepend">
+                                <i class="fas fa-user-ninja icon rounded-left"></i>
+                            </span>
+                            <input type="text" class="form-control" name="surname" id="surname" placeholder="Please enter your lastname!">
+
+                        </div>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-prepend">
+                                <i class="fas fa-envelope icon rounded-left"></i>
+                            </span>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="Please enter your e-mail!">
+
+                        </div>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-prepend">
+                                <i class="fas fa-user-circle icon rounded-left"></i>
+                            </span>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Please enter your username!">
+
+                        </div>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-prepend">
+                                <i class="fas fa-id-card icon rounded-left"></i>
+                            </span>
+                            <input type="text" class="form-control" name="cardid" id="cardid" placeholder="Please read your card!">
+
+                        </div>
+                        <div class="card border-success">
+                            <button type="submit" class="btn btn-success float-left" id="save">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var URL_SERVER = window.location.hostname + ":8500";
+        var socket = io.connect(URL_SERVER);
+        socket.on('rfid', function (data) {
+            $("#cardid").val(data);
+        });
+    </script>
+
+</div>

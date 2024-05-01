@@ -1,0 +1,33 @@
+{
+  "name": "smartlock",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "sudo node app"
+  },
+  "author": "Muhammet Şükrü Demir",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dsm"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "*",
+    "ejs": "*",
+    "express": "*",
+    "express-ejs-layouts": "*",
+    "express-session": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "socket.io": "*"
+  },
+  "description": "this software for raspberry pi",
+  "keywords": [
+    "rfid",
+    "raspberrpi"
+  ]
+}

@@ -1,0 +1,65 @@
+<div class="container-fluid" style="margin-top: 100px">
+    <div class="row">
+        <div class="signupPanel">
+            <div class="card border-dark">
+                <div class="card-header">
+                    <h3 class="mb-0">User Updater</h3>
+                </div>
+                <div class="card-body text-dark">
+                    <form action="/users/updateUser/<%=userGET.username%>" method="POST">
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-prepend">
+                                <i class="fas fa-user-ninja icon rounded-left"></i>
+                            </span>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Please enter new firstname!" value="<%=userGET.name%>">
+                        </div>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-prepend">
+                                <i class="fas fa-user-ninja icon rounded-left"></i>
+                            </span>
+                            <input type="text" class="form-control" name="surname" id="surname" placeholder="Please enter new lastname!" value="<%=userGET.surname%>">
+                        </div>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-prepend">
+                                <i class="fas fa-envelope icon rounded-left"></i>
+                            </span>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="Please enter new e-mail!" value="<%=userGET.email%>">
+                        </div>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-prepend">
+                                <i class="fas fa-user-circle icon rounded-left"></i>
+                            </span>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Please enter new username!" value="<%=userGET.username%>">
+                        </div>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-prepend">
+                                <i class="fas fa-key icon rounded-left"></i>
+                            </span>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Please enter new password!">
+                        </div>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-prepend">
+                                <i class="fas fa-id-card icon rounded-left"></i>
+                            </span>
+                            <input type="text" class="form-control" name="cardid" id="cardid" placeholder="Please read new card!" value="<%=userGET.cardid%>">
+                        </div>
+                        <div class="card border-success">
+                            <button type="submit" class="btn btn-success float-left" id="update">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var URL_SERVER = window.location.hostname + ":8500";
+        var socket = io.connect(URL_SERVER);
+        socket.on('rfid', function (data) {
+            $("#cardid").val(data);
+            console.log("hello")
+        });
+    </script>
+
+</div>
