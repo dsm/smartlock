@@ -1,3 +1,3 @@
-# PI_SmartLock
+# Smartlock
 
-# test
+This is my final project in 2021. I added other design file later.
